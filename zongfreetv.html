@@ -1,0 +1,762 @@
+<head> <link rel="stylesheet" href="http://tv.niazitv.pk/assets/css/theme.css">  <meta charset="utf-8">   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<scriptlanguage=javascript> <head> <style> .img{ position: fixed; left: 2px; z-index: 100; width: 200px; height: 40px; padding-top:5px; } </style> <!-- Uses the latest versions of video.js and videojs-contrib-hls. To use specific versions, please change the URLs to the form: <link href="https://vjs.zencdn2.net/5.16.0/video-js.css" rel="stylesheet"> <script src="https://vjs.zencdn2.net/5.16.0/video.js"></script> <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> --> <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet"></link>
+
+<style type="text/css">.vjs-theme-fantasy{--vjs-theme-fantasy--primary:#FFD700;--vjs-theme-fantasy--secondary:#fff}.vjs-theme-fantasy .vjs-big-play-button{width:70px;height:70px;background:none;line-height:70px;font-size:80px;border:none;top:50%;left:50%;margin-top:-35px;margin-left:-35px;color:var(--vjs-theme-fantasy--primary)}.vjs-theme-fantasy.vjs-big-play-button:focus,.vjs-theme-fantasy:hover .vjs-big-play-button{background-color:transparent;color:#fff}.vjs-theme-fantasy .vjs-control-bar{height:54px}.vjs-theme-fantasy .vjs-button>.vjs-icon-placeholder:before,.vjs-theme-fantasy .vjs-time-control{line-height:54px}.vjs-theme-fantasy .vjs-play-control{font-size:1.5em;position:relative}.vjs-theme-fantasy .vjs-volume-panel{order:4}.vjs-theme-fantasy .vjs-volume-bar{margin-top:2.5em}.vjs-theme-city .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal{height:100%}.vjs-theme-fantasy .vjs-progress-control .vjs-progress-holder,.vjs-theme-fantasy .vjs-progress-control:hover .vjs-progress-holder{font-size:1.5em}.vjs-theme-fantasy .vjs-play-control .vjs-icon-placeholder:before{height:1.3em;width:1.3em;margin-top:.2em;border-radius:1em;border:3px solid var(--vjs-theme-fantasy--secondary);top:2px;left:9px;line-height:1.1}.vjs-theme-fantasy .vjs-play-control:hover .vjs-icon-placeholder:before{border:3px solid var(--vjs-theme-fantasy--secondary)}.vjs-theme-fantasy .vjs-play-progress,.vjs-theme-fantasy .vjs-play-progress:before{background-color:var(--vjs-theme-fantasy--primary)}.vjs-theme-fantasy .vjs-play-progress:before{height:.8em;width:.8em;content:"";border:4px solid var(--vjs-theme-fantasy--secondary);border-radius:.8em;top:-.25em}.vjs-theme-fantasy .vjs-progress-control{font-size:14px}.vjs-theme-fantasy .vjs-fullscreen-control{order:6}.vjs-theme-fantasy .vjs-remaining-time{display:none}.vjs-theme-fantasy.nyan .vjs-play-progress{background:linear-gradient(180deg,#fe0000 0,#fe9a01 16.666666667%,#fe9a01 0,#ff0 33.332666667%,#ff0 0,#32ff00 49.999326667%,#32ff00 0,#0099fe 66.6659926%,#0099fe 0,#63f 83.33266%,#63f 0)}.vjs-theme-fantasy.nyan .vjs-play-progress:before{height:1.3em;width:1.3em;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 125' fill='%23fff'%3E%3Cpath d='M62.153 37.323h2.813v3.246h-2.813zM64.858 40.569h2.813v3.246h-2.813zM67.672 43.814h11.9v3.246h-11.9zM79.572 24.449h2.813v19.365h-2.813zM82.386 37.323h3.244v3.246h-3.244zM85.63 34.132h5.627v3.246H85.63zM91.257 37.323h2.92v12.95h-2.92zM94.177 50.274h2.922V66.21h-2.922zM91.29 66.372h2.887v3.245H91.29zM88.401 69.617h2.889v3.246h-2.889zM27.312 72.863h61.003v3.245H27.312zM73.622 76.108h2.889v3.246h-2.889zM82.563 76.108h2.888v3.246h-2.888zM76.511 79.354h6.053v3.245h-6.053zM61.941 79.354h8.895v3.245h-8.895zM67.947 76.108h2.889v3.246h-2.889zM59.321 76.108h2.888v3.246h-2.888zM27.312 17.917h49.387v3.246H27.312zM76.699 21.162h2.873v3.287h-2.873zM56.372 34.132h5.781v3.191h-5.781zM53.448 37.323h2.924v12.951h-2.924zM50.488 50.274h2.96v16.049h-2.96zM53.448 66.323h2.924v3.257h-2.924zM56.372 69.58h2.949v3.283h-2.949zM65.069 63.213h2.878v6.367h-2.878zM67.947 66.397h17.504v3.22H67.947z'/%3E%3Cpath d='M82.563 63.213h2.888v3.185h-2.888zM73.801 63.213h2.898v3.185h-2.898zM76.699 56.774h2.873v3.145h-2.873zM82.563 56.774h2.888v3.145h-2.888zM85.451 53.444h2.864v3.33h-2.864z'/%3E%3Cpath d='M85.451 56.774h2.864v3.145h-2.864zM65.069 53.444h2.878v3.33h-2.878zM65.069 56.774h2.878v3.145h-2.878zM62.209 56.774h2.86v3.145h-2.86zM21.509 24.327h2.813v45.169h-2.813zM24.323 21.162h2.99v3.165h-2.99zM18.562 69.496h8.75v3.367h-8.75zM15.656 72.863h2.906v9.591h-2.906zM18.562 79.301h8.75v3.153h-8.75zM24.323 76.108h5.743V79.3h-5.743zM33.136 76.108h2.824v6.346h-2.824zM35.96 79.281h5.813v3.173H35.96zM41.774 76.108h2.864v3.173h-2.864zM3.948 40.569h11.708v3.229H3.948zM3.948 43.814h2.921v6.459H3.948zM6.869 47.06h2.934v6.384H6.869zM9.803 50.274h2.909v6.5H9.803z'/%3E%3Cpath d='M12.711 53.444h2.945v6.475h-2.945zM15.656 56.774h5.853v3.145h-5.853z'/%3E%3Cpath d='M18.583 59.919h2.926v3.294h-2.926zM18.583 47.044h2.926v6.4h-2.926zM12.711 43.814h5.872v3.229h-5.872zM15.647 47.044h2.936v3.2h-2.936z'/%3E%3Cpath fill='none' d='M47.439 50.274h3.049v3.17h-3.049z'/%3E%3Cpath d='M73.801 30.94v-3.138h-2.965v-3.354l-37.7-.122v3.151h-3.07v3.462l-2.753-.108-.118 32.381h2.871v3.185h3.07v-3.185h2.824v3.185h-2.824v3.099l20.312.084v-3.257h-2.96V50.274h2.96V37.323h2.924v-3.191h5.781v3.191h2.813l-.108 3.246h2.813v3.246h9.027V30.94h-2.897zM33.136 56.682h-3.07v-3.158h3.07v3.158zm2.824-22.55h-2.824v-3.084h2.824v3.084zm2.907 12.928h2.907v3.184h-2.907V47.06zm5.771 16.153h-2.864v-3.294h2.864v3.294zm2.801-19.399h-2.801v-3.246h2.801v3.246zm6.009-12.766h-2.96v-3.354h2.96v3.354zm8.705 0h-2.832v-3.354h2.832v3.354zm8.683 6.275h-2.889v-3.191h2.889v3.191z'/%3E%3C/svg%3E") no-repeat;border:none;top:-.35em}</style>
+
+
+
+
+ <script src="https://raw.githack.com/mskps/sagheeronline_script/08c06a3c2d5cb1d46a14ef6aefe746932d70fe46/vjs%20player%20script.js"></script> <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> <head> <div style="position: fixed; top: 0px; width: 100%"><center> <video
+    id="my-video"
+    class="video-js vjs-theme-fantasy"
+    controls
+    preload="none"
+    width="360"
+    height="204"
+    poster="http://tiny.cc/Dreamp"
+    data-setup="{}"
+    >
+    <source src="https://raw.githack.com/mskps/hosting-so/3ec6afdfaa048af237b6b7bba81f5b8ec6b780db/km_20220708_1080p.mp4" type="video/mp4" />
+    
+  </video></div> </body> </html>  </div> </body> </html> 
+<ul id="playlist"> 
+   <script type="text/javascript">var player = videojs('my-video', {
+  playbackRates: [0.5, 0.75, 1,1.25,1.50,1.75,2,2.50,3]
+});
+
+
+// player.controlBar.getChild("PlaybackRateMenuButton").show();
+
+// When you pass text in options it just creates a control text,
+// which is displayed as tooltip when hovered on 
+// this button viz the span in you div,
+
+var fullscreen = player.controlBar.getChild("FullscreenToggle")
+var index = player.controlBar.children().indexOf(fullscreen)
+
+
+// If you want to register your component with name
+const Button = videojs.getComponent("Button");
+var heartComponent = videojs.extend(Button);
+videojs.registerComponent("Heart", heartComponent);
+
+var myButton = player.controlBar.addChild("Heart", {}, index);
+
+console.log(player.controlBar.children());
+
+
+// There are many functions available for button component 
+// like below mentioned in this docs 
+// https://docs.videojs.com/button. 
+// You can set attributes and clasess as well.
+
+// Getting html DOM
+var myButtonDom = myButton.el();
+// Since now you have the html dom element 
+// you can add click events
+
+// Now I am setting the text as you needed.
+myButtonDom.innerHTML = "<a class='heart-emoji'>&#128308;&#128587;</a>";
+
+// Adding a click event function
+myButtonDom.onclick = function(){
+  alert("Please Visit My Web !   sagheeronline.com");
+}  </script>
+<script> $(function(){ $("#playlist sagheeronline").on("click", function() { var player = videojs('my-video'); player.pause(); var link ="https://wasitv.ga/zongfreetv.php?channel=https://cdn02.zongtv.pk:8087/zongauth/"; var q ="/playlist.m3u8"; player.poster = "http://img.youtube.com/vi/"+new_url+"/maxresdefault.jpg"; var new_url = $(this).attr("so-dreamtv"); player.src({ type: 'video/mp4', src: link+new_url+q }); player.load(); player.play(); }); });</script>
+
+
+
+
+
+
+<meta charset="UTF-8"> 
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <title>Dream Tv Player</title> 
+   
+   <ul id="playlist"> 
+    <div style="align=center; padding-top: 58%;"> 
+     <style> @font-face { font-family: myFirstFont; src: url(sansation_light.woff); } @font-face { font-family: myFirstFont; src: url(sansation_bold.woff); font-weight bold; } * { font-family myFirstFont; } </style> 
+     <div style="font-weight: bold; border-radius: 1%; color: black; font-size: 20px;"> 
+     </div>
+     <br> 
+     <ul style="list-style-type:none"> 
+      <style>ul{padding-left:0px; text-align:center;} li{ padding:0px;} </style> 
+      
+      
+      <div id="myBtnContainer">
+<center style="position: fixed; top: 185px; width: 100%">
+	<p style="background-color:#222;">
+												<span class="blink"><b>Zong Free TV Powered By Sagheer Online</span>
+												
+												
+												
+												<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+      	
+      
+												
+  <style type="text/css">#test {
+  width: 100px;
+  
+}
+
+
+.video-js .vjs-loading-spinner {
+    border-color: #00FF0B#00FFFF#FF0066#FFFF0B;
+}
+
+.video-js .vjs-control-bar2 {
+    background-color: #000
+}
+
+.video-js .vjs-control-bar {
+    background-color: #3B444B;
+    color: #FDE910;
+    font-size: 10px
+}
+
+.video-js .vjs-play-progress,
+.video-js .vjs-volume-level {
+    background-color: #2483d5
+}</style>
+												
+												
+												
+												
+												
+												
+												
+<style>
+.blink {
+        animation: blinker 0.6s linear infinite;
+        color: #FFFF00;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Cursive;
+      }
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        }
+       .blink-one {
+      @keyframes blinker-one {
+        0% {
+          opacity: 0;</style><input  id="searchbar" onkeyup="search_sagheeronlinesearch()" type="text"
+		name="search" placeholder="Enter a keyword for search..">   <span class="blinking"></span><marquee style="color: white" scrollamount="6" behavior="scroll" direction="right">اس سیکشن میں موجود تمام چینلز آپ زونگ کی سم سے بالکل فری دیکھ سکتے ہیں، اس پیج کو اوپن کرنے کے لیے آپ کے پاس 8 سے 10 ایم بی ہونے چاہیے لیکن آپ کے ایم بی استعمال نہیں ہونگے۔ویڈیو نہ چلنے یا زیادہ دیر لوڈنگ کی صورت میں ویڈیو پر دوبارہ کلک کریں۔  ڈریم ٹی وی ایپ استعمال کرنے کا شکریہ۔
+<img style="width: 45px; height: 22px; transform: rotate(-5deg);" src="https://bit.ly/dreamlogo1"></marquee></span>
+
+<input style="height:15px; width:15px;" class="sobtn" onclick="filterSelection('Medium')" id="medium" type="radio" name="radio" onclick="medium()" value="" checked=""> <span id="M" onclick="medium()">Medium</span><span style="visibility: hidden;">ii</span> <input style="height:15px; width:15px;" class="sobtn" onclick="filterSelection('Low')" id="low" type="radio" onclick="low()" name="radio" value=""> <span id="L" onclick="low()">Low</span><span style="visibility: hidden;">ii</span> <input style="height:15px; width:15px;" class="sobtn" onclick="filterSelection('high')" id="high" type="radio" onclick="high()" name="radio" value=""> <span id="H" onclick="high()">High</span></span></div>
+<div class="container"><style> img{ padding: 0px; margin:0px; height:80px; width: 80px;} body{ background-color: #222;} </style> 
+      <style> hr.samiali { border: 0px solid #2A2827; } body { margin-left:0px; margin-right:0px; margin-top: 0px; background: 120404; text-align: center; color: White; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-image: url(""); background-repeat: no-repeat; background-position: 100px; background-attachment:fixed; background-position: top 100px center </style> 
+ <style>
+#search{width:85%;
+Height:30px;
+text-align:center;
+border:1px solid red;
+border-radius:10px;
+Padding:10px;}
+.thumb{border-radius:100%;
+margin:5px;margin-top:5px;}
+</style>
+  
+<style>
+      /* Style the buttons */
+    .button2 {
+    background-color: #000000; 
+    color: white; 
+    
+}
+.button2:hover {
+	background-color: #000000;
+    color: white;
+   }
+  .btn {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 15px;
+         }
+       .sagheeronline, .btn:hover {
+        background-color: rgb();
+        color: white;
+        
+        border-radius: 100%;
+        font-size: 15px;
+        padding: 0px 0px;
+        border: none;
+        outline: none;
+   }
+        /* Style the active class, and buttons on mouse-over */
+      .active, .btn:hover {
+      	box-shadow: 1px 1px 15px 0px rgba(255, 216, 0);
+ background-color: #FFD800;
+        color: white;
+        }
+      </style><html>
+<style>
+.sagheeronlinefilter {
+  float: left;
+  padding: 0px 7px;
+  
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Style the buttons */
+</style></head>
+ 
+       <div class="sagheerso">
+     	 <div id="sagheerso">
+        <center>  <button hidden>
+        <so class="btn active"></so></button>    
+        
+	<br><br><br> 
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="121M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/madani-channel-live.png?id=14" ><Madani   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="142M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/saudi-quran-makkah-tv-hd-live.png?id=33" ><Saudi Quran   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="141M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/saudi-sunnah-madinah-tv-hd-live.png?id=19" ><Saudi Sunnah   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="pakvsengt20"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/tensports.png?id=84" ><ten sport hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="82M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-TV-Channel-logo.png?id=11" ><Hum Tv hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="174M"><img  class="thumb" src="https://srv2.jazztv.pk/jazzlive/uploads/categories/bd2759405dc48fe33e54a7bbdd5092e7.png" ><Ptv home hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="80M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-News-Channel-logo.png?id=47" ><hum news hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="152M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/dawn-news-live.png?id=53" >
+											<dawn news hidden></a>
+  </div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="157-4M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-Sitaray-Channel-logo.png?id=59" ><hum sitaray hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="81M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-Masala-Channel-logo.png?id=87" ><hum masala hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="119M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-Pashto-Channel-logo.png?id=10" ><hum pashto hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="158-1M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/filmax-live.png?id=78" ><filmax hidden></div>
+  
+  
+  
+  
+  
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="159-3M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/bol-news-live.png?id=80" ><bol news   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="158-2M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/ltn-family-live.png?id=96" ><ltn family hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="173M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/samaa-tv-live.png?id=97" ><samaa  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="155M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/express-news-live.png?id=49" ><express news  hidden></div>
+
+
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="137M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/geo-news-live.png?id=42" ><geo news hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="159-44M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/bol-entertainment-live.png?id=68" ><bol ent   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="128M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/news-one-live.png?id=31" ><news 1  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="110M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/neo-tv-live.png?id=99" ><neo tv hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="115M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/public-news-live.png?id=15" ><public news  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="124M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/aaj-news-live.png?id=98" ><aaj news   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="86M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/cnn-news-live.png?id=37" ><cnn news  hidden></div>
+
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="126M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/filmworld-live.png?id=41" ><film world   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="133M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/abb-takk-news-live.png?id=44" ><aab takk   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="122M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/geo-entertainment-live.png?id=50" ><geo ent   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="111M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/capital-tv-live.png?id=21" ><capital tv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="181M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/gnn-live.png?id=58" ><gnn news   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="159-1M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/express-entertainment-live.png?id=94" ><express ent  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="129M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/tv-one-live.png?id=41" ><tv1 hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="158-4M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/urdu-1-live.png?id=92" ><urdu1   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="134M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/apna-tv-live.png?id=75" ><apna tv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="156M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/see-tv-live.png?id=96" ><see tv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="125M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/aaj-entertainment-live.png?id=86" ><aaj ent  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="159-2M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/mehran-tv-logo.png?id=65" ><mehran tv   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="154M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/play-tv-live.png?id=39" ><play tv hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="118M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/a-plus-live.png?id=95" ><aplus   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="132M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/discover-pakistan-live-logo.png?id=77" ><discovery  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="175M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/metro-1-news-live.png?id=35" ><metro news   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="176M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/movie-one-live.png?id=96" ><movie 1   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="UK44-145M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/din-news-live.png?id=23" ><din news  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="87M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/cartoon-network-live.png?id=61" ><cartoon  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="77M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/baby-tv-live.png?id=24" ><baby tv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="177M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/champion-tv-live.png?id=55" ><champion tv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="131M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/8xm-live.png?id=57" ><span style="display: none" class="target2">8xm</span></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="135M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/jalwa-tv-live.png?id=29" ><jalwa  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="157-2M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/kohenoor-tv-live.png?id=98" ><kohenoor  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="146M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/channel-24-live.png?id=96" ><span style="display: none" class="target2">24 news</span></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="109M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/mashriq-tv-live.png?id=34" ><mashriq   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="159-4M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/channel-five-live.png?id=39" ><channel5 hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="GTV-186"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/gtv-news-live.png?id=89" ><gtv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="179M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/lahore-rang-logo.png?id=29" ><lahore rang   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="PNN-185"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/pnn-news-live.png?id=18" ><pnn news   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="136-4AM"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/DW-english-live.png?id=55" ><dw  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="184M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/a1-tv-live.png?id=30" ><a1  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="147M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/rohi-live.png?id=46" ><rohi   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="143M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/city41-live.png?id=90" ><city41  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="144M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/city-42-live.png?id=65" ><city42  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="139M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/roze-news-live.png?id=61" ><roz news  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="151M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/ktn-news-live.png?id=29" ><ktn news hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="149M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/ktn-entertainment-live.png?id=24" ><ktn ent hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="136-2M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/sindh-tv-news-live.png?id=50" ><sind news hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="136-1M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/sindh-tv-live.png?id=40" ><sindh tv hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="172M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/time-news-live.png?id=32" ><time news  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="150M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/kashish-live.png?id=21" ><kashish  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="114M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/avt-khyber-tv-live.png?id=97" ><khyber  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="160M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/khyber-news-live.png?id=21" ><khyber news  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="127M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/kay2-tv-live.png?id=96" ><kay2   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="140M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/afghan-tv-live.png?id=18" ><afghan   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="183M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/such-tv-live.png?id=18" ><such tv   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="130M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/waseb-live.png?id=23" ><waseb   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="162M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/punjab-tv-live.png?id=69" ><punjab   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="117M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/aruj-live.png?id=38" ><aruj   hidden></div>
+											
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Medium"><a class="btn" ><sagheeronline so-dreamtv="116M"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/k21-news-live.png?id=63" ><k21  hidden></div>
+
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="121L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/madani-channel-live.png?id=14" ><Madani   hidden></div>
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="142L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/saudi-quran-makkah-tv-hd-live.png?id=33" ><Saudi Quran   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="141L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/saudi-sunnah-madinah-tv-hd-live.png?id=19" ><Saudi Sunnah   hidden></div>
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="pakvsengt20"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/tensports.png?id=84" ><ten sport hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="82L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-TV-Channel-logo.png?id=11" ><Hum Tv hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="174H"><img  class="thumb" src="https://srv2.jazztv.pk/jazzlive/uploads/categories/bd2759405dc48fe33e54a7bbdd5092e7.png" ><Ptv home hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="80L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-News-Channel-logo.png?id=47" ><hum news hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="152L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/dawn-news-live.png?id=53" >
+											<dawn news hidden></a>
+  </div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="157-4L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-Sitaray-Channel-logo.png?id=59" ><hum sitaray hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="81L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-Masala-Channel-logo.png?id=87" ><hum masala hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="119L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-Pashto-Channel-logo.png?id=10" ><hum pashto hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="158-1L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/filmax-live.png?id=78" ><filmax hidden></div>
+  
+  
+  
+  
+  
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="159-3L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/bol-news-live.png?id=80" ><bol news   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="158-2L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/ltn-family-live.png?id=96" ><ltn family hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="173L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/samaa-tv-live.png?id=97" ><samaa  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="155L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/express-news-live.png?id=49" ><express news  hidden></div>
+
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="137L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/geo-news-live.png?id=42" ><geo news hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="159-44L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/bol-entertainment-live.png?id=68" ><bol ent   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="128L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/news-one-live.png?id=31" ><news 1  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="110L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/neo-tv-live.png?id=99" ><neo tv hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="115L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/public-news-live.png?id=15" ><public news  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="124L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/aaj-news-live.png?id=98" ><aaj news   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="86L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/cnn-news-live.png?id=37" ><cnn news  hidden></div>
+
+
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="126L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/filmworld-live.png?id=41" ><film world   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="133L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/abb-takk-news-live.png?id=44" ><aab takk   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="122L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/geo-entertainment-live.png?id=50" ><geo ent   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="111L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/capital-tv-live.png?id=21" ><capital tv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="181L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/gnn-live.png?id=58" ><gnn news   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="159-1L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/express-entertainment-live.png?id=94" ><express ent  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="129L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/tv-one-live.png?id=41" ><tv1 hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="158-4L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/urdu-1-live.png?id=92" ><urdu1   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="134L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/apna-tv-live.png?id=75" ><apna tv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="156L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/see-tv-live.png?id=96" ><see tv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="125L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/aaj-entertainment-live.png?id=86" ><aaj ent  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="159-2L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/mehran-tv-logo.png?id=65" ><mehran tv   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="154L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/play-tv-live.png?id=39" ><play tv hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="118L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/a-plus-live.png?id=95" ><aplus   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="132L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/discover-pakistan-live-logo.png?id=77" ><discovery  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="175L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/metro-1-news-live.png?id=35" ><metro news   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="176L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/movie-one-live.png?id=96" ><movie 1   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="145L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/din-news-live.png?id=23" ><din news  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="87L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/cartoon-network-live.png?id=61" ><cartoon  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="77L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/baby-tv-live.png?id=24" ><baby tv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="177L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/champion-tv-live.png?id=55" ><champion tv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="131L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/8xm-live.png?id=57" ><span style="display: none" class="target2">8xm</span></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="135L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/jalwa-tv-live.png?id=29" ><jalwa  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="157-2L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/kohenoor-tv-live.png?id=98" ><kohenoor  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="146L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/channel-24-live.png?id=96" ><span style="display: none" class="target2">24 news</span></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="109L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/mashriq-tv-live.png?id=34" ><mashriq   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="159-4L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/channel-five-live.png?id=39" ><channel5 hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="GTV-186"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/gtv-news-live.png?id=89" ><gtv  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="179L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/lahore-rang-logo.png?id=29" ><lahore rang   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="PNN-185"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/pnn-news-live.png?id=18" ><pnn news   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="136-4AL"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/DW-english-live.png?id=55" ><dw  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="184L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/a1-tv-live.png?id=30" ><a1  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="147L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/rohi-live.png?id=46" ><rohi   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="143L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/city41-live.png?id=90" ><city41  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="144L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/city-42-live.png?id=65" ><city42  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="139L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/roze-news-live.png?id=61" ><roz news  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="151L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/ktn-news-live.png?id=29" ><ktn news hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="149L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/ktn-entertainment-live.png?id=24" ><ktn ent hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="136-2L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/sindh-tv-news-live.png?id=50" ><sind news hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="136-1L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/sindh-tv-live.png?id=40" ><sindh tv hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="172L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/time-news-live.png?id=32" ><time news  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="150L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/kashish-live.png?id=21" ><kashish  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="114L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/avt-khyber-tv-live.png?id=97" ><khyber  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="160L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/khyber-news-live.png?id=21" ><khyber news  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="127L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/kay2-tv-live.png?id=96" ><kay2   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="140L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/afghan-tv-live.png?id=18" ><afghan   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="183L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/such-tv-live.png?id=18" ><such tv   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="130L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/waseb-live.png?id=23" ><waseb   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="162L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/punjab-tv-live.png?id=69" ><punjab   hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="117L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/aruj-live.png?id=38" ><aruj   hidden></div>
+											
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter Low"><a class="btn" ><sagheeronline so-dreamtv="116L"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/k21-news-live.png?id=63" ><k21  hidden></div>
+
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="121H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/madani-channel-live.png?id=14" ><madani  hidden></div>
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="142H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/saudi-quran-makkah-tv-hd-live.png?id=33" ><Quran makkah  hidden></div>
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="141H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/saudi-sunnah-madinah-tv-hd-live.png?id=19" ><sunnah madinah  hidden></div>
+
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="174L"><img  class="thumb" src="https://srv2.jazztv.pk/jazzlive/uploads/categories/bd2759405dc48fe33e54a7bbdd5092e7.png" ><Ptv home   hidden></div>
+
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="82H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-TV-Channel-logo.png?id=11" ><hum tv   hidden></div>
+
+
+
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="157-4H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-Sitaray-Channel-logo.png?id=59" ><hum sitaray   hidden></div>
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="81H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-Masala-Channel-logo.png?id=87" ><hum masala   hidden></div>
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="159-3H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/bol-news-live.png?id=80" ><bol news   hidden></div>
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="159-44H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/bol-entertainment-live.png?id=68" ><bol ent   hidden></div>
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="159-1H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/express-entertainment-live.png?id=94" ><express ent   hidden></div>
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="158-4H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/urdu-1-live.png?id=92" ><urdu1   hidden></div>
+  
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="134H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/apna-tv-live.png?id=75" ><apna tv   hidden></div>
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="77H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/baby-tv-live.png?id=24" ><baby tv   hidden></div>
+
+
+
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="87H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/cartoon-network-live.png?id=61" ><cartoon   hidden></div>
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="173H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/samaa-tv-live.png?id=97" ><samaa   hidden></div>
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="155H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/express-news-live.png?id=49" ><express news   hidden></div>
+
+
+
+<li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="133H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/abb-takk-news-live.png?id=44" ><abbtak news   hidden></div>
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="115H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/public-news-live.png?id=15" ><public news   hidden></div>
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="80H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/HUM-News-Channel-logo.png?id=47" ><hum news   hidden></div>
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="136-4AH"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/DW-english-live.png?id=55" ><dw   hidden></div>
+  
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="86H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/cnn-news-live.png?id=37" ><cnn   hidden></div>
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="131H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/8xm-live.png?id=57" ><span style="display: none" class="target2">8xm</span></div>
+  
+  
+  
+  <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="135H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/jalwa-tv-live.png?id=29" ><jalwa   hidden></div>
+  
+ <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"> <a class="btn" ><sagheeronline so-dreamtv="NEWS1-128"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/news-one-live.png?id=31" >
+											<news1   hidden></div>
+											
+											
+											
+ <li  class="sagheeronlinesearch"><div class="sagheeronlinefilter high"><a class="btn" ><sagheeronline so-dreamtv="129H"><img  class="thumb" src="https://jazztv.pk/jazzlive/uploads/channels/logo/tv-one-live.png?id=41" ><tv1   hidden></div>
+  
+  
+  
+  
+  
+
+
+</a></div>
+
+
+
+
+<script type="text/javascript">// JavaScript code
+function search_sagheeronlinesearch() {
+	let input = document.getElementById('searchbar').value
+	input=input.toLowerCase();
+	let x = document.getElementsByClassName('sagheeronlinesearch');
+	
+	for (i = 0; i < x.length; i++) {
+		if (!x[i].innerHTML.toLowerCase().includes(input)) {
+			x[i].style.display="none";
+		}
+		else {
+			x[i].style.display="list-item";				
+		}
+	}
+}
+</script>
+        
+</div>
+
+<script>
+filterSelection("Medium")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("sagheeronlinefilter");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
+ </div>
+      
+
+      <script>
+        // let hasbeenclicked = 0
+        // document.getElementById("hasbeenclickedID").innerHTML = hasbeenclicked;
+      // Add active class to the current button (highlight it)
+      var header = document.getElementById("sagheerso");
+      var btns = header.getElementsByClassName("btn");
+      // var restBtns = btns.getElementsByClassName("btns") 
+
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+
+          for (var x = 0; x < btns.length; i++){
+           var drugaklasa = document.getElementsByClassName("btn");
+           drugaklasa[x].className = drugaklasa[x].className.replace("btn", "sagheeronline");
+          }
+        
+
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      
+
+        
+
+        // return hasbeenclicked = 1;
+        });
+        
+      }
+      </script>
+      
+      </body>
+      </html>
+      
+  </body> 
+</html>
+<hr>
+<span style="color: #FFFFFF; >
+	<h5 style="text-align: center;">Copyrights 2022 Dream TV  - All Rights Reserved. <a href="#"></a>
+     <hr>Powered by DreamTV&nbsp;<span style="color: red;">(Download)</span><p></p>
+     <hr></h5>
+</ul>
+    </div>
+   </ul>
+  </ul>
+ </body>
+</html>
