@@ -277,6 +277,55 @@
         ]
       },
       "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
+      }, 
+      
+      
+      {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/capitaltv-111/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "Capital TV",
+        "description": "<span style='color: #FF0000'>Jazz Free TV</span> Powered By <strong>Sagheer Online</strong>",
+        "id": "16",
+        "thumbnail": "https://srv2.jazztv.pk/jazzlive/uploads/channels/Capital-TV.png",
+        "poster": [
+          "https://i.postimg.cc/Fs2Vk3tg/20210709-015338.jpg"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
+    }, 
+      
+       {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/gnnnews-181/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "GNN News",
+        "description": "<span style='color: #FF0000'>Jazz Free TV</span> Powered By <strong>Sagheer Online</strong>",
+        "id": "17",
+        "thumbnail": "https://srv2.jazztv.pk/jazzlive/uploads/channels/GNN-News.png",
+        "poster": [
+          "https://i.postimg.cc/Fs2Vk3tg/20210709-015338.jpg"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
+    }, 
+      
+       {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/movie-one-176/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "Movie One",
+        "description": "<span style='color: #FF0000'>Jazz Free TV</span> Powered By <strong>Sagheer Online</strong>",
+        "id": "18",
+        "thumbnail": "https://srv2.jazztv.pk/jazzlive/uploads/categories/a/movie-one.png",
+        "poster": [
+          "https://i.postimg.cc/Fs2Vk3tg/20210709-015338.jpg"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
             
     }
   ]
