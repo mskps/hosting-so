@@ -1,4 +1,6 @@
  {
+  "playlist": [
+    {
       "src": {
         "hls": "https://cdn2.jazztv.pk:8087/testyolo/SaudiQuran-142/playlist.m3u8"
       },
@@ -1291,11 +1293,9 @@
         ]
       },
       "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
-    }, 
-            
-             
-            
-        
+    }
+  ]
+}
             
          
             
