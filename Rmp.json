@@ -224,6 +224,124 @@
         ]
       },
       "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
-       }
+       
+  {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/ltn-family-158-2/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "LTN Family",
+        "description": "<span style='color: #FF0000'>Jazz Free TV</span> Powered By <strong>Sagheer Online</strong>",
+        "id": "13",
+        "thumbnail": "https://srv2.jazztv.pk/jazzlive/uploads/categories/a/LTN-Logo.png",
+        "poster": [
+          "https://i.postimg.cc/Fs2Vk3tg/20210709-015338.jpg"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
+    }, 
+        
+       {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/EXP-ENT-159-1/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "Express Ent",
+        "description": "<span style='color: #FF0000'>Jazz Free TV</span> Powered By <strong>Sagheer Online</strong>",
+        "id": "14",
+        "thumbnail": "https://srv2.jazztv.pk/jazzlive/uploads/categories/a/Express-Entertainment.png",
+        "poster": [
+          "https://i.postimg.cc/Fs2Vk3tg/20210709-015338.jpg"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
+    }, 
+            
+            
+            
+        
+       {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/TV1-129/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "Tv One",
+        "description": "<span style='color: #FF0000'>Jazz Free TV</span> Powered By <strong>Sagheer Online</strong>",
+        "id": "15",
+        "thumbnail": "https://srv2.jazztv.pk/jazzlive/uploads/categories/a/Tvone.png",
+        "poster": [
+          "https://i.postimg.cc/Fs2Vk3tg/20210709-015338.jpg"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
+    }, 
+            
+            
+      
+       {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/capitaltv-111/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "Capital TV",
+        "description": "<span style='color: #FF0000'>Jazz Free TV</span> Powered By <strong>Sagheer Online</strong>",
+        "id": "16",
+        "thumbnail": "https://srv2.jazztv.pk/jazzlive/uploads/channels/Capital-TV.png",
+        "poster": [
+          "https://i.postimg.cc/Fs2Vk3tg/20210709-015338.jpg"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
+    }, 
+      
+       {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/gnnnews-181/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "GNN News",
+        "description": "<span style='color: #FF0000'>Jazz Free TV</span> Powered By <strong>Sagheer Online</strong>",
+        "id": "17",
+        "thumbnail": "https://srv2.jazztv.pk/jazzlive/uploads/channels/GNN-News.png",
+        "poster": [
+          "https://i.postimg.cc/Fs2Vk3tg/20210709-015338.jpg"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
+    }, 
+      
+       {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/movie-one-176/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "Movie One",
+        "description": "<span style='color: #FF0000'>Jazz Free TV</span> Powered By <strong>Sagheer Online</strong>",
+        "id": "18",
+        "thumbnail": "https://srv2.jazztv.pk/jazzlive/uploads/categories/a/movie-one.png",
+        "poster": [
+          "https://i.postimg.cc/Fs2Vk3tg/20210709-015338.jpg"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
+    }, 
+            
+       
+       {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/City42-144/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "City 42",
+        "description": "<span style='color: #FF0000'>Jazz Free TV</span> Powered By <strong>Sagheer Online</strong>",
+        "id": "19",
+        "thumbnail": "https://srv2.jazztv.pk/jazzlive/uploads/categories/a/City-42.png",
+        "poster": [
+          "https://i.postimg.cc/Fs2Vk3tg/20210709-015338.jpg"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-1.xml?cb=__timestamp__"
+
+}
   ]
 }
