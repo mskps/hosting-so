@@ -1,0 +1,68 @@
+{
+  "playlist": [
+    {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/Madni-121/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9OS80LzIwMjIgMTozMDo0MSBBTSZoYXNoX3ZhbHVlPXlleXBaT0hoYnJyY3QvR0IraW1GY2c9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+      },
+      "contentMetadata": {
+        "title": "Related Item 13",
+        "description": "Description for related item 13",
+        "id": "13131313131313131313",
+        "thumbnail": "https://www.radiantmediaplayer.com/media/playlist/poster/item-13-thumbnail-related.jpg",
+        "duration": "01:51",
+        "poster": [
+          "https://www.radiantmediaplayer.com/media/playlist/poster/item-13.jpg"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear.xml"
+    },
+    {
+      "src": {
+        "hls": "https://cdn2.jazztv.pk:8087/testyolo/PNN-185/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9OS80LzIwMjIgMTozMDo0MSBBTSZoYXNoX3ZhbHVlPXlleXBaT0hoYnJyY3QvR0IraW1GY2c9PSZ2YWxpZG1pbnV0ZXM9MQ=="
+      },
+      "contentMetadata": {
+        "title": "Related Item 14",
+        "description": "Description for related item 14",
+        "id": "14141414141414141414",
+        "thumbnail": "https://i.postimg.cc/k5YpPx4s/95025619228200.png",
+        "duration": "10:53",
+        "poster": [
+          "https://i.postimg.cc/k5YpPx4s/95025619228200.png"
+        ]
+      },
+      "adTagUrl": "https://www.radiantmediaplayer.com/vast/tags/inline-linear-skippable.xml"
+    },
+    {
+      "src": {
+        "hls": "https://5b44cf20b0388.streamlock.net:8443/vod/smil:bbb-long.smil/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "Related Item 15",
+        "description": "Description for related item 15",
+        "id": "15151515151515151515",
+        "thumbnail": "https://www.radiantmediaplayer.com/media/playlist/poster/item-15-thumbnail-related.jpg",
+        "duration": "09:56",
+        "poster": [
+          "https://www.radiantmediaplayer.com/media/playlist/poster/item-15.jpg"
+        ]
+      },
+      "adTagUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator="
+    },
+    {
+      "src": {
+        "hls": "https://5b44cf20b0388.streamlock.net:8443/vod/smil:sintel-hd.smil/playlist.m3u8"
+      },
+      "contentMetadata": {
+        "title": "Related Item 16",
+        "description": "Description for related item 16",
+        "id": "16161616161616161616",
+        "thumbnail": "https://www.radiantmediaplayer.com/media/playlist/poster/item-16-thumbnail-related.jpg",
+        "duration": "02:59",
+        "poster": [
+          "https://www.radiantmediaplayer.com/media/playlist/poster/item-16.jpg"
+        ]
+      },
+      "adTagUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator="
+    }
+  ]
+}
